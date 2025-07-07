@@ -1,18 +1,19 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './android/app/src/main/sale/HomeScreen';
-import InventoryScreen from './android/app/src/main/InventoryScreen';
-import SaleScreen from './android/app/src/main/sale/SaleScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+import HomeScreen from './app/sale/HomeScreen';
+import InventoryScreen from './app/InventoryScreen';
+import SaleScreen from './app/sale/SaleScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Add Inventory" component={InventoryScreen} />
+        <Stack.Screen name="Inventory" component={InventoryScreen} />
         <Stack.Screen name="Sale" component={SaleScreen} />
       </Stack.Navigator>
     </NavigationContainer>
